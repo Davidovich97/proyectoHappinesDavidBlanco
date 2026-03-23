@@ -25,8 +25,9 @@ public class Usuario {
     public void setPassword(String password)
      { this.password = password; }
  
-    
+    //Metodo toString
+    @Override
    public String toString() {
-    return "nombre: " + nombre + " | Email: " + email;
+    return nombre + email;
 }
 }
