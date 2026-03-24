@@ -1,4 +1,5 @@
 
+import java.time.LocalDate;
 import java.util.*;
 
 public class proyectoHappiness {
@@ -31,6 +32,7 @@ public class proyectoHappiness {
             System.out.println("9. Salir");
             System.out.print("Seleccione una opción: ");
         opcionMenu=teclado.nextInt();
+        teclado.nextLine();
 
         // Switch con las opciones del menu
 
@@ -38,6 +40,7 @@ public class proyectoHappiness {
 
             //Añadir Usuario
              case 1: 
+
                     System.out.print("Introduce Nombre: ");
                 String nombreNuevo = teclado.nextLine();
                     System.out.print("Introduce Email: "); 
@@ -55,13 +58,15 @@ public class proyectoHappiness {
                         System.out.println("Usuario creado correctamente.");
                     }
                     break;
+                    
             //Eliminar Usuario 
              case 2:
+
                 System.out.print("Introduce el email del usuario que quieres eliminar: ");
                 //creamos una variable para guardar el email que queremos borrar
                     String emailEliminar = teclado.nextLine();
 
-                //Comprobamos con .contaisKey si el email que queremos eliminar esta guardado y si existe lo borramos con el .remove   
+                //Comprobamos con .containsKey si el email que queremos eliminar esta guardado y si existe lo borramos con el .remove   
                 if (mapaUsuarios.containsKey(emailEliminar)) {
                         mapaUsuarios.remove(emailEliminar);
                             System.out.println("Usuario eliminado correctamente.");
@@ -69,8 +74,32 @@ public class proyectoHappiness {
                 //Si no existe ponemos un mensaje para aclararlo
                 else {
                 System.out.println("El usuario no existe.");
-    }
-    break;
+                     }
+                    break;
+                
+            // Añadir Evento
+             case 3: 
+
+                //Limpiamos el buffer y pasamos el formato de la fecha a String;
+                
+                System.out.print("Formato de Fecha (AAAA-MM-DD): ");
+                System.out.println("Introduce la Fecha"); 
+                String fechaTexto = teclado.nextLine();
+                LocalDate fecha = LocalDate.parse(fechaTexto);       
+                    System.out.print("Introduce el Título: "); 
+                        String titulo = teclado.nextLine();
+                        
+                    System.out.print("Introduce la Ubicación: "); 
+                        String ubicacion = teclado.nextLine();
+                    System.out.print("Introduce la Descripción: "); 
+                        String descripcion = teclado.nextLine();
+
+                //Creamos el evento con los datos introducidos y lo guardamos en el HashMap
+                    Evento nuevoEvento = new Evento(contadorIdsEventos, fecha, titulo, ubicacion, descripcion);
+                    mapaEventos.put(contadorIdsEventos, nuevoEvento);
+                    System.out.println("Evento creado con ID: " + contadorIdsEventos);
+                    contadorIdsEventos++;
+                    break;
         }
             }
 
