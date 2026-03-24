@@ -36,7 +36,8 @@ public class proyectoHappiness {
 
         switch(opcionMenu){
 
-            /*Añadir Usuario*/ case 1: 
+            //Añadir Usuario
+             case 1: 
                     System.out.print("Introduce Nombre: ");
                 String nombreNuevo = teclado.nextLine();
                     System.out.print("Introduce Email: "); 
@@ -44,6 +45,32 @@ public class proyectoHappiness {
                     System.out.print("Introduce Password: "); 
                 String passNuevo = teclado.nextLine();
                 
+                //Verificamos si ya tenemos el usuario creado teniendo en cuenta el email que es la Clave
+                if (mapaUsuarios.containsKey(emailNuevo)) {
+                        System.out.println("El usuario ya existe.");
+
+                //Si no existe lo guardamos con .put en el HashMap de usuarios guardando el email nuevo como clave y el usuario nuevo como el valor
+                    } else {
+                        mapaUsuarios.put(emailNuevo, new Usuario(nombreNuevo, emailNuevo, passNuevo));
+                        System.out.println("Usuario creado correctamente.");
+                    }
+                    break;
+            //Eliminar Usuario 
+             case 2:
+                System.out.print("Introduce el email del usuario que quieres eliminar: ");
+                //creamos una variable para guardar el email que queremos borrar
+                    String emailEliminar = teclado.nextLine();
+
+                //Comprobamos con .contaisKey si el email que queremos eliminar esta guardado y si existe lo borramos con el .remove   
+                if (mapaUsuarios.containsKey(emailEliminar)) {
+                        mapaUsuarios.remove(emailEliminar);
+                            System.out.println("Usuario eliminado correctamente.");
+                                }           
+                //Si no existe ponemos un mensaje para aclararlo
+                else {
+                System.out.println("El usuario no existe.");
+    }
+    break;
         }
             }
 
