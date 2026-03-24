@@ -8,6 +8,7 @@ public class proyectoHappiness {
         Scanner teclado = new Scanner(System.in);
         
         // HashMaps
+        // Prueba
         HashMap<String, Usuario> mapaUsuarios = new HashMap<>(); 
         HashMap<Integer, Evento> mapaEventos = new HashMap<>();   
         ArrayList<Favorito> listaFavoritos = new ArrayList<>();
