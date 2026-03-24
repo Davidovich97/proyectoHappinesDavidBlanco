@@ -1,9 +1,10 @@
-
+package Happiness;
 import java.time.LocalDate;
 import java.util.*;
 
 public class proyectoHappiness {
     public static void main(String[] args) {
+        System.out.println("Inserte un dato");
         Scanner teclado = new Scanner(System.in);
         
         // HashMaps

@@ -1,3 +1,4 @@
+package Happiness;
 public class Galeria {
     private int id;
     private String titulo;
