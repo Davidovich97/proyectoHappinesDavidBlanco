@@ -8,7 +8,7 @@ public class proyectoHappiness {
         Scanner teclado = new Scanner(System.in);
         
         // HashMaps
-        // Prueba
+        
         HashMap<String, Usuario> mapaUsuarios = new HashMap<>(); 
         HashMap<Integer, Evento> mapaEventos = new HashMap<>();   
         ArrayList<Favorito> listaFavoritos = new ArrayList<>();
@@ -52,12 +52,12 @@ public class proyectoHappiness {
                 
                 //Verificamos si ya tenemos el usuario creado teniendo en cuenta el email que es la Clave
                 if (mapaUsuarios.containsKey(emailNuevo)) {
-                        System.out.println("El usuario ya existe.");
+                        System.out.println("El usuario ya existe");
 
                 //Si no existe lo guardamos con .put en el HashMap de usuarios guardando el email nuevo como clave y el usuario nuevo como el valor
                     } else {
                         mapaUsuarios.put(emailNuevo, new Usuario(nombreNuevo, emailNuevo, passNuevo));
-                        System.out.println("Usuario creado correctamente.");
+                        System.out.println("Usuario creado correctamente");
                     }
                     break;
                     
@@ -82,11 +82,12 @@ public class proyectoHappiness {
             // Añadir Evento
              case 3: 
 
-                //Limpiamos el buffer y pasamos el formato de la fecha a String;
+                //Pasamos la fecha al formato AAAA-MM-DD
                 
                 System.out.print("Formato de Fecha (AAAA-MM-DD): ");
                 System.out.println("Introduce la Fecha"); 
                 String fechaTexto = teclado.nextLine();
+                //Guardamos la fecha introducida
                 LocalDate fecha = LocalDate.parse(fechaTexto);       
                     System.out.print("Introduce el Título: "); 
                         String titulo = teclado.nextLine();
@@ -102,13 +103,68 @@ public class proyectoHappiness {
                     System.out.println("Evento creado con ID: " + contadorIdsEventos);
                     contadorIdsEventos++;
                     break;
-        }
-            }
+                    
+             //Eliminar Evento
+             case 4:
+                //Primero vamos a mostrar con un bucle for los IDs para que el usuario los vea de manera bonita
+                    for (Evento IDs : mapaEventos.values()) {
+                    System.out.println(IDs);}
+                    
+                // Pedimos el ID del evento que desea eliminar
+                System.out.print("\n Introduce el ID del evento que deseas eliminar ");
+                int idEliminar = teclado.nextInt();
+                teclado.nextLine(); // Limpieza de buffer
+
+                // Verificamos si el evento existe y si existe lo eliminamos
+                if (mapaEventos.containsKey(idEliminar)) {
+                    mapaEventos.remove(idEliminar);
+                    System.out.println("Evento eliminado correctamente.");
+                } else {
+                    // Si el evento no existe mostramos un mensaje que nos informe
+                    System.out.println("El evento no existe.");
+                }
+                break;
+                
+                // 5. Añadir galería
+            case 5:
+                System.out.println("LISTADO DE EVENTOS");
+                for (Evento IDs : mapaEventos.values()) {
+                    System.out.println(IDs);
+                }
+                
+                System.out.print("\nIntroduce el ID del evento para crear la galería: ");
+                int idEvento = teclado.nextInt();
+                teclado.nextLine(); //Limpiamos buffer
+                
+                
+                //Comprobamos si contiene el ID y si no introducimos el título
+                if (!mapaEventos.containsKey(idEvento)) {
+                    System.out.println("ID de evento incorrecto.");
+                } else {
+                    System.out.print("Introduce el Título de la galería: ");
+                    String tituloGal = teclado.nextLine();
+                    
+                    //Creamos el objeto Galeria con el contador el título y el ID
+                    Galeria nuevaGaleria = new Galeria(contadorIdsGalerias, tituloGal, idEvento);
+                    
+                    //Añadimos a la colección de galerías del evento específico usando el Id de la galeria
+                    //Obtenemos la lista del arrayList de la galeria y añadimos el nuevo objeto creado.
+                    mapaEventos.get(idEvento).getGaleriaList().add(nuevaGaleria);
+                    
+                    //Mostramos que se haya creado correctamente y el ID
+                    System.out.println("Galería creada correctamente, el ID asignado es: " + contadorIdsGalerias);
+                    contadorIdsGalerias++;
+                }
+                break;
+                    
+                  
+        
+          }
+         }
+        
 
         while (opcionMenu!=9);
 
         
     
-    }
-
-}
+    }}
