@@ -16,12 +16,25 @@ public class proyectoHappiness {
         // Contadores necesarios para los ID
         int contadorIdsEventos=0;
         int contadorIdsGalerias=0;
+        int idEvento;
 
         // Variable para poner la respuesta del menu
         int opcionMenu;
+        
+        //Creamos 6 eventos para que se puedan realizar todos los casos del menu
+        mapaEventos.put(contadorIdsEventos, new Evento(contadorIdsEventos++, LocalDate.parse("2023-05-10"), "Concierto Rock", "Madrid", "Gran concierto de musica."));
+        mapaEventos.put(contadorIdsEventos, new Evento(contadorIdsEventos++, LocalDate.parse("2023-11-15"), "Feria del Libro", "Barcelona", "Muchos libros y autores."));
+        mapaEventos.put(contadorIdsEventos, new Evento(contadorIdsEventos++, LocalDate.parse("2024-01-20"), "Exposición Arte", "Sevilla", "Cuadros del siglo XIX."));
+        mapaEventos.put(contadorIdsEventos, new Evento(contadorIdsEventos++, LocalDate.parse("2025-07-15"), "Festival Verano", "Valencia", "Música junto al mar."));
+        mapaEventos.put(contadorIdsEventos, new Evento(contadorIdsEventos++, LocalDate.parse("2025-12-01"), "Congreso Java", "Malaga", "Todo sobre programación."));
+        mapaEventos.put(contadorIdsEventos, new Evento(contadorIdsEventos++, LocalDate.parse("2026-03-22"), "Hackathon 48h", "Bilbao", "Competencia de codigo."));
+
+        // También metemos un usuario para poder usar directamente Eliminar Usuario sin tener que crear uno
+        mapaUsuarios.put("primerusuario@gmail.com", new Usuario("Juanito", "primerusuario@gmail.com", "1234"));
+
+
 
         // Bucle para escoger opcion del menu
-
         do {System.out.println("\n MENU HAPPINESS&Co\n");
             System.out.println("1. Añadir usuario");
             System.out.println("2. Eliminar usuario");
@@ -133,7 +146,7 @@ public class proyectoHappiness {
                 }
                 
                 System.out.print("\nIntroduce el ID del evento para crear la galería: ");
-                int idEvento = teclado.nextInt();
+                idEvento = teclado.nextInt();
                 teclado.nextLine(); //Limpiamos buffer
                 
                 
@@ -201,7 +214,7 @@ public class proyectoHappiness {
                             }
                         }
 
-                        //Una vez encontrada obtenemos la lista en la que esta y la borramos
+                        //Una vez encontrada obtenemos la lista y la borramos
                         if (galeriaEncontrada != null) {
                             eventoSeleccionado.getGaleriaList().remove(galeriaEncontrada);
                             System.out.println("Galería eliminada correctamente.");
@@ -211,6 +224,89 @@ public class proyectoHappiness {
                         
                     }
                 }
+                break;
+            
+            //Añadir Favorito    
+             case 7: 
+                 
+                System.out.println("Vamos a añadir un evento a favoritos");
+                
+                //Mostramos el ID y el título de los eventos al usuario para que escoja uno
+                System.out.println("Eventos disponibles:");
+                for (Evento eventos : mapaEventos.values()) {
+                    System.out.println("ID: " + eventos.getId() + " titulo " + eventos.getTitulo());
+                }
+
+                //Pedimos el ID del evento y luego el Email del usuario, que son las claves
+                System.out.print("\nIntroduce el ID del evento: ");
+                idEvento = teclado.nextInt();
+                teclado.nextLine(); // Limpiar buffer
+
+                System.out.print("\nIntroduce el Email del usuario: ");
+                String emailFav = teclado.nextLine();
+
+               
+                // Verificamos si existen el evento y el usuario con .containsKey()
+                if (mapaEventos.containsKey(idEvento) && mapaUsuarios.containsKey(emailFav)) {
+                    
+                    //Si existen creamos el objeto Favorito con los datos introducidos de Usuario(email) y Evento(ID)
+                    Favorito nuevoFav = new Favorito(emailFav, idEvento);
+                    
+                    //Lo guardamos en la lista de favoritos
+                    listaFavoritos.add(nuevoFav);
+                    
+                    System.out.println("Favorito creado correctamente");
+                } else {
+                    // Si nos da error
+                    System.out.println("El ID de evento o el Email de usuario son incorrectos");
+                }
+                break;
+            
+            //Eliminar Favorito    
+             case 8:  
+                 
+                System.out.println("Lista de Favoritos:");
+                
+                //Mostramos los favoritos que existen
+                if (listaFavoritos.isEmpty()) {
+                    System.out.println("No hay ningún favorito registrado.");
+                } else {
+                    for (Favorito f : listaFavoritos) {
+                        System.out.println(f); // Usa el toString de la clase para poder mostrarlo
+                    }
+                }
+
+                //Pedimos los datos para encontrar el favorito, para ello necesitamos las claves, el correo y el ID de evento
+                System.out.print("\nIntroduce el correo del usuario: ");
+                String emailBorrar = teclado.nextLine();
+                
+                System.out.print("Introduce el ID del evento: ");
+                idEvento = teclado.nextInt();
+                teclado.nextLine(); // Limpiamos buffer
+
+                //Bucle para buscar el favorito
+                Favorito favEliminar = null;
+                for (Favorito f : listaFavoritos) {
+                    // Verificamos si coinciden ambos datos y si coinciden lo guardamos en favEliminar
+                    if (f.getCorreoUsuario().equals(emailBorrar) && f.getIdEvento() == idEvento) {
+                        favEliminar = f;
+                        break; 
+                    }
+                }
+
+                //Usamos un if para eliminar el favorito si lo ha guardado y un mensaje de error por si da problemas
+                if (favEliminar != null) {
+                    listaFavoritos.remove(favEliminar);
+                    System.out.println("Favorito eliminado correctamente");
+                } else {
+                    System.out.println("El favorito no existe");
+                }
+                break;
+            
+            //Salir del menu
+             case 9:
+                 System.out.println("Usted esta saliendo del menu");
+                 
                 break;
                   
         
