@@ -79,7 +79,7 @@ public class proyectoHappiness {
                      }
                     break;
                 
-            // Añadir Evento
+            //Añadir Evento
              case 3: 
 
                 //Pasamos la fecha al formato AAAA-MM-DD
@@ -104,7 +104,7 @@ public class proyectoHappiness {
                     contadorIdsEventos++;
                     break;
                     
-             //Eliminar Evento
+            //Eliminar Evento
              case 4:
                 //Primero vamos a mostrar con un bucle for los IDs para que el usuario los vea de manera bonita
                     for (Evento IDs : mapaEventos.values()) {
@@ -125,9 +125,9 @@ public class proyectoHappiness {
                 }
                 break;
                 
-                // 5. Añadir galería
-            case 5:
-                System.out.println("LISTADO DE EVENTOS");
+            //Añadir galería
+             case 5:
+                System.out.println("Lista de IDs Eventos");
                 for (Evento IDs : mapaEventos.values()) {
                     System.out.println(IDs);
                 }
@@ -137,7 +137,7 @@ public class proyectoHappiness {
                 teclado.nextLine(); //Limpiamos buffer
                 
                 
-                //Comprobamos si contiene el ID y si no introducimos el título
+                //Comprobamos si existe el evento al que queremos asignarle la nueva galeria
                 if (!mapaEventos.containsKey(idEvento)) {
                     System.out.println("ID de evento incorrecto.");
                 } else {
@@ -156,7 +156,62 @@ public class proyectoHappiness {
                     contadorIdsGalerias++;
                 }
                 break;
+                
+            //Eliminar Galería
+             case 6:
+                 /*Volvemos a usar el for para que nos muestre los IDs, nos lo pasa a toString sin 
+                 tener que llamarlo ya que si lo encuentra en la clase lo utiliza*/
+                 for (Evento IDs : mapaEventos.values()) {
+                    System.out.println(IDs);
+                }
+                System.out.print("\n Introduce el ID del evento donde quieres eliminar una galeria ");
+                idEvento = teclado.nextInt();
+                teclado.nextLine(); //Limpiamos buffer
+                
+                //Comprobamos si el evento existe
+                if (!mapaEventos.containsKey(idEvento)) {
+                    System.out.println("El evento no existe.");
+                } else {
+                    //Si existe usamos la clave idEvento para conseguir los valores de dicho evento y lo guardamos
+                    Evento eventoSeleccionado = mapaEventos.get(idEvento);
                     
+                    //Mostramos las galerías que tiene ese evento por título
+                    System.out.println("Galerías del evento " + eventoSeleccionado.getTitulo());
+                    
+                    //Si la lista está vacía, avisamos, usamos el .isEmpty para comprovar esto
+                    if (eventoSeleccionado.getGaleriaList().isEmpty()) {
+                        System.out.println("Este evento no tiene ninguna galería");
+                    } else {
+                    // Mostramos la lista de galerias del evento
+                        for (Galeria g : eventoSeleccionado.getGaleriaList()) {
+                            System.out.println(g); // Usa el toString() de Galeria si lo tenemos creado
+                        }
+
+                        System.out.print("\nIntroduce el ID de la galería que quieres eliminar: ");
+                        int idGalEliminar = teclado.nextInt();
+                        teclado.nextLine();
+                        
+                        /*Usamos una nueva variable inicializada estando vacía, si el ID de g al recorrer
+                        la liosta es el mismo que hemos escrito para eliminar lo guarda en la variable galeriaEncontrada*/
+                        Galeria galeriaEncontrada = null;
+                        for (Galeria g : eventoSeleccionado.getGaleriaList()) {
+                            if (g.getId() == idGalEliminar) {
+                                galeriaEncontrada = g; 
+                                break; // Cuando coincide salimos del bucle
+                            }
+                        }
+
+                        //Una vez encontrada obtenemos la lista en la que esta y la borramos
+                        if (galeriaEncontrada != null) {
+                            eventoSeleccionado.getGaleriaList().remove(galeriaEncontrada);
+                            System.out.println("Galería eliminada correctamente.");
+                        } else {
+                            System.out.println("No se ha encontrado ninguna galería con ese ID en este evento.");
+                        }
+                        
+                    }
+                }
+                break;
                   
         
           }
