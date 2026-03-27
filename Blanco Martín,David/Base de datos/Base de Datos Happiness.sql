@@ -3,15 +3,15 @@ USE Happiness;
 
 CREATE TABLE Usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL
+    nombre VARCHAR(60) NOT NULL,
+    email VARCHAR(60) UNIQUE NOT NULL,
+    password VARCHAR(60) NOT NULL
 );
 
 CREATE TABLE Eventos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     fecha DATE NOT NULL,
     titulo VARCHAR(150) NOT NULL,
-    ubicacion VARCHAR(255) NOT NULL,
-    descripcion TEXT
+    ubicacion VARCHAR(80) NOT NULL,
+    descripcion VARCHAR(1000)
 );
