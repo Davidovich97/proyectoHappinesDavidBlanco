@@ -1,6 +1,7 @@
 CREATE DATABASE IF NOT EXISTS Happiness;
 USE Happiness;
 
+/*Creación de tablas*/
 CREATE TABLE Usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(60) NOT NULL,
@@ -9,13 +10,13 @@ CREATE TABLE Usuarios (
 );
 
 CREATE TABLE Eventos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT PRIMARY KEY,
     fecha DATE NOT NULL,
     titulo VARCHAR(150) NOT NULL,
     ubicacion VARCHAR(80) NOT NULL,
     descripcion VARCHAR(1000)
 );
-
+ALTER TABLE Eventos MODIFY id INT NOT NULL; /*Modificamos y eliminamos que los eventos sea autonumerico*/
 CREATE TABLE Galerias (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	titulo VARCHAR(80) NOT NULL,
@@ -40,3 +41,9 @@ CREATE TABLE Favoritos (
     CONSTRAINT fk_usuario_favorito FOREIGN KEY (id_Usuario) REFERENCES Usuarios(id) ON DELETE CASCADE,
     CONSTRAINT fk_evento_favorito FOREIGN KEY (id_Evento) REFERENCES Eventos(id) ON DELETE CASCADE
 );
+
+/*Insertamos los Usuarios en su tabla*/
+INSERT INTO Usuarios (id, nombre, email, password) VALUES 
+(1, 'Juanito Blanco', 'primerusuario@gmail.com', '1234'),
+(2, 'Elena Martínez', 'elena.mtnez@gmail.com', 'elena2026'),
+(3, 'Carlos Terol', 'c.terol@outlook.com', 'charli99');

@@ -31,7 +31,7 @@ mapaEventos.put(5, new Evento(5, LocalDate.parse("2026-06-25"), "Danza Moderna",
 contadorIdsEventos = 6;
 
         // También metemos un usuario para poder usar directamente Eliminar Usuario sin tener que crear uno
-        mapaUsuarios.put("primerusuario@gmail.com", new Usuario("Juanito", "primerusuario@gmail.com", "1234"));
+        mapaUsuarios.put("primerusuario@gmail.com", new Usuario("Juanito Blanco", "primerusuario@gmail.com", "1234"));
 
 
 
