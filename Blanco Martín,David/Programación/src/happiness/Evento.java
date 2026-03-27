@@ -8,7 +8,7 @@ public class Evento {
     private String titulo;
     private String ubicacion;
     private String descripcion;
-    private ArrayList<Galeria> galeriaList;
+    private ArrayList<Galeria> galerias;
  
     public Evento(int id, LocalDate fecha, String titulo, String ubicacion, String descripcion) {
         this.id = id;
@@ -16,7 +16,7 @@ public class Evento {
         this.titulo = titulo;
         this.ubicacion = ubicacion;
         this.descripcion = descripcion;
-        this.galeriaList = new ArrayList<>();
+        this.galerias = new ArrayList<>();
     }
  
     // Getters y Setters
@@ -30,8 +30,8 @@ public class Evento {
     public void setUbicacion(String ubicacion) { this.ubicacion = ubicacion; }
     public String getDescripcion() { return descripcion; }
     public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
-    public ArrayList<Galeria> getGaleriaList() { return galeriaList; }
-    public void setGaleriaList(ArrayList<Galeria> galeriaList) { this.galeriaList = galeriaList; }
+    public ArrayList<Galeria> getGaleriaList() { return galerias; }
+    public void setGaleriaList(ArrayList<Galeria> galeriaList) { this.galerias = galerias; }
  
     @Override
     public String toString() {

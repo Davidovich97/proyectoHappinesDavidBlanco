@@ -22,12 +22,13 @@ public class proyectoHappiness {
         int opcionMenu;
         
         //Creamos 6 eventos para que se puedan realizar todos los casos del menu
-        mapaEventos.put(contadorIdsEventos, new Evento(contadorIdsEventos++, LocalDate.parse("2023-05-10"), "Concierto Rock", "Madrid", "Gran concierto de musica."));
-        mapaEventos.put(contadorIdsEventos, new Evento(contadorIdsEventos++, LocalDate.parse("2023-11-15"), "Feria del Libro", "Barcelona", "Muchos libros y autores."));
-        mapaEventos.put(contadorIdsEventos, new Evento(contadorIdsEventos++, LocalDate.parse("2024-01-20"), "Exposición Arte", "Sevilla", "Cuadros del siglo XIX."));
-        mapaEventos.put(contadorIdsEventos, new Evento(contadorIdsEventos++, LocalDate.parse("2025-07-15"), "Festival Verano", "Valencia", "Música junto al mar."));
-        mapaEventos.put(contadorIdsEventos, new Evento(contadorIdsEventos++, LocalDate.parse("2025-12-01"), "Congreso Java", "Malaga", "Todo sobre programación."));
-        mapaEventos.put(contadorIdsEventos, new Evento(contadorIdsEventos++, LocalDate.parse("2026-03-22"), "Hackathon 48h", "Bilbao", "Competencia de codigo."));
+mapaEventos.put(0, new Evento(0, LocalDate.parse("2026-01-01"), "Concierto Año Nuevo", "Teatro Real", "Música clásica")); 
+mapaEventos.put(1, new Evento(1, LocalDate.parse("2026-01-12"), "Cine de Invierno", "Cines Callao", "Ciclo de cine")); 
+mapaEventos.put(2, new Evento(2, LocalDate.parse("2026-01-24"), "Expo Arte", "Museo Prado", "Arte moderno")); 
+mapaEventos.put(3, new Evento(3, LocalDate.parse("2026-06-05"), "Festival Rock", "Estadio", "Rock al aire libre")); 
+mapaEventos.put(4, new Evento(4, LocalDate.parse("2026-06-15"), "Teatro Verano", "Plaza Mayor", "Comedia")); 
+mapaEventos.put(5, new Evento(5, LocalDate.parse("2026-06-25"), "Danza Moderna", "Auditorio", "Espectáculo danza")); 
+contadorIdsEventos = 6;
 
         // También metemos un usuario para poder usar directamente Eliminar Usuario sin tener que crear uno
         mapaUsuarios.put("primerusuario@gmail.com", new Usuario("Juanito", "primerusuario@gmail.com", "1234"));
@@ -162,7 +163,7 @@ public class proyectoHappiness {
                     
                     //Añadimos a la colección de galerías del evento específico usando el Id de la galeria
                     //Obtenemos la lista del arrayList de la galeria y añadimos el nuevo objeto creado.
-                    mapaEventos.get(idEvento).getGaleriaList().add(nuevaGaleria);
+                    mapaEventos.get(idEvento).getGalerias().add(nuevaGaleria);
                     
                     //Mostramos que se haya creado correctamente y el ID
                     System.out.println("Galería creada correctamente, el ID asignado es: " + contadorIdsGalerias);
@@ -192,11 +193,11 @@ public class proyectoHappiness {
                     System.out.println("Galerías del evento " + eventoSeleccionado.getTitulo());
                     
                     //Si la lista está vacía, avisamos, usamos el .isEmpty para comprovar esto
-                    if (eventoSeleccionado.getGaleriaList().isEmpty()) {
+                    if (eventoSeleccionado.getGalerias().isEmpty()) {
                         System.out.println("Este evento no tiene ninguna galería");
                     } else {
                     // Mostramos la lista de galerias del evento
-                        for (Galeria g : eventoSeleccionado.getGaleriaList()) {
+                        for (Galeria g : eventoSeleccionado.getGalerias()) {
                             System.out.println(g); // Usa el toString() de Galeria si lo tenemos creado
                         }
 
@@ -207,7 +208,7 @@ public class proyectoHappiness {
                         /*Usamos una nueva variable inicializada estando vacía, si el ID de g al recorrer
                         la liosta es el mismo que hemos escrito para eliminar lo guarda en la variable galeriaEncontrada*/
                         Galeria galeriaEncontrada = null;
-                        for (Galeria g : eventoSeleccionado.getGaleriaList()) {
+                        for (Galeria g : eventoSeleccionado.getGalerias()) {
                             if (g.getId() == idGalEliminar) {
                                 galeriaEncontrada = g; 
                                 break; // Cuando coincide salimos del bucle
@@ -216,7 +217,7 @@ public class proyectoHappiness {
 
                         //Una vez encontrada obtenemos la lista y la borramos
                         if (galeriaEncontrada != null) {
-                            eventoSeleccionado.getGaleriaList().remove(galeriaEncontrada);
+                            eventoSeleccionado.getGalerias().remove(galeriaEncontrada);
                             System.out.println("Galería eliminada correctamente.");
                         } else {
                             System.out.println("No se ha encontrado ninguna galería con ese ID en este evento.");
