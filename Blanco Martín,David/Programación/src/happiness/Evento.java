@@ -30,8 +30,8 @@ public class Evento {
     public void setUbicacion(String ubicacion) { this.ubicacion = ubicacion; }
     public String getDescripcion() { return descripcion; }
     public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
-    public ArrayList<Galeria> getGaleriaList() { return galerias; }
-    public void setGaleriaList(ArrayList<Galeria> galeriaList) { this.galerias = galerias; }
+    public ArrayList<Galeria> getGalerias() { return galerias; }
+    public void setGalerias(ArrayList<Galeria> galeriaList) { this.galerias = galerias; }
  
     @Override
     public String toString() {
