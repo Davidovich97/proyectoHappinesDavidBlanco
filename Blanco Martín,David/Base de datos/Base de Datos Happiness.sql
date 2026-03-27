@@ -15,3 +15,20 @@ CREATE TABLE Eventos (
     ubicacion VARCHAR(80) NOT NULL,
     descripcion VARCHAR(1000)
 );
+
+CREATE TABLE Galerias (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	titulo VARCHAR(80) NOT NULL,
+    id_Evento INT NOT NULL,
+    CONSTRAINT fk_evento_galeria FOREIGN KEY (id_Evento) REFERENCES Eventos(id) ON DELETE CASCADE
+);
+
+CREATE TABLE Imagenes_Galeria (
+	id INT AUTO_INCREMENT PRIMARy KEY,
+    titulo VARCHAR(80) NOT NULL,
+    imagen VARCHAR(100) NOT NULL,
+    id_Galeria INT NOT NULL,
+    CONSTRAINT fk_galeria_imagen FOREIGN KEY (id_Galeria) REFERENCES Galerias(id) ON DELETE CASCADE
+
+
+);
