@@ -33,6 +33,7 @@ CREATE TABLE Imagenes_Galeria (
 
 
 );
+RENAME TABLE Imagenes_Galeria TO Imagenes_Galerias; /*Renombramos la tabla para ponerla en plural*/
 
 CREATE TABLE Favoritos (
 	id_Usuario INT NOT NULL,
@@ -42,8 +43,19 @@ CREATE TABLE Favoritos (
     CONSTRAINT fk_evento_favorito FOREIGN KEY (id_Evento) REFERENCES Eventos(id) ON DELETE CASCADE
 );
 
-/*Insertamos los Usuarios en su tabla*/
+/*Insertamos los 3 Usuarios en su tabla*/
 INSERT INTO Usuarios (id, nombre, email, password) VALUES 
 (1, 'Juanito Blanco', 'primerusuario@gmail.com', '1234'),
 (2, 'Elena Martínez', 'elena.mtnez@gmail.com', 'elena2026'),
 (3, 'Carlos Terol', 'c.terol@outlook.com', 'charli99');
+
+
+/*Insertamos los eventos que habiamos puesto en la clase main de Java para poder ejecutar los case del menú, empieza en 0
+porque el de jave empieza en 0*/
+INSERT INTO Eventos (id, fecha, titulo, ubicacion, descripcion) VALUES 
+(0, '2026-01-01', 'Concierto Año Nuevo', 'Teatro Real', 'Música clásica'),
+(1, '2026-01-12', 'Cine de Invierno', 'Cines Callao', 'Ciclo de cine'),
+(2, '2026-01-24', 'Expo Arte', 'Museo Prado', 'Arte moderno'),
+(3, '2026-06-05', 'Festival Rock', 'Estadio', 'Rock al aire libre'),
+(4, '2026-06-15', 'Teatro Verano', 'Plaza Mayor', 'Comedia'),
+(5, '2026-06-25', 'Danza Moderna', 'Auditorio', 'Espectáculo danza');

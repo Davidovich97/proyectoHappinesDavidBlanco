@@ -32,6 +32,8 @@ contadorIdsEventos = 6;
 
         // También metemos un usuario para poder usar directamente Eliminar Usuario sin tener que crear uno
         mapaUsuarios.put("primerusuario@gmail.com", new Usuario("Juanito Blanco", "primerusuario@gmail.com", "1234"));
+        mapaUsuarios.put("elena.mtnez@gmail.com", new Usuario("Elena Martínez", "elena.mtnez@gmail.com", "elena2026"));
+        mapaUsuarios.put("c.terol@outlook.com", new Usuario("Carlos Terol", "c.terol@outlook.com", "charli99"));
 
 
 
