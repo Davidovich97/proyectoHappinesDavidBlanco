@@ -4,6 +4,7 @@ USE Happiness;
 /*Creacion de tablas*/
 
 
+
 CREATE TABLE Usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(60) NOT NULL,
@@ -51,23 +52,30 @@ INSERT INTO Usuarios (nombre, email, password) VALUES
 ('Carlos Terol', 'c.terol@outlook.com', 'charli99');
 
 INSERT INTO Eventos (id, fecha, titulo, ubicacion, descripcion) VALUES 
-(0, '2026-01-01', 'Concierto Año Nuevo', 'Teatro Real', 'Música clásica'),
-(1, '2026-01-12', 'Cine de Invierno', 'Cines Callao', 'Ciclo de cine'),
-(2, '2026-01-24', 'Expo Arte', 'Museo Prado', 'Arte moderno'),
-(3, '2026-06-05', 'Festival Rock', 'Estadio', 'Rock al aire libre'),
-(4, '2026-06-15', 'Teatro Verano', 'Plaza Mayor', 'Comedia'),
-(5, '2026-06-25', 'Danza Moderna', 'Auditorio', 'Espectáculo danza');
+(0, '2026-01-01', 'Concierto de Año Nuevo OSPA', 'Auditorio Príncipe Felipe, Oviedo', 'Concierto de la Orquesta Sinfónica del Principado de Asturias.'),
+(1, '2026-01-12', 'Ciclo de Cine Clásico', 'Centro Niemeyer, Avilés', 'Proyección de grandes clásicos en versión original subtitulada.'),
+(2, '2026-01-24', 'Expo: Tesoros de la mar', 'Museo del Jurásico (MUJA), Colunga', 'Exposición temporal sobre fósiles marinos hallados en la costa asturiana.'),
+(3, '2026-06-05', 'Metrópoli Gijón Preview', 'Recinto Ferial de Gijón', 'Avance del festival de cultura pop y entretenimiento.'),
+(4, '2026-06-15', 'Teatro: Comedia en el Campoamor', 'Teatro Campoamor, Oviedo', 'Obra de teatro humorística con actores locales.'),
+(5, '2026-06-25', 'Noche de Danza en el Puerto', 'Puerto Deportivo, Gijón', 'Espectáculo de danza contemporánea frente al mar.');
+
 
 INSERT INTO Galerias (titulo, id_Evento) VALUES 
-('Galería Concierto 2026', 0),
-('Galería Cine Enero', 1),
-('Galería Arte Moderno', 2);
-
+('Fotos Concierto Oviedo', 0),
+('Capturas Ciclo Niemeyer', 1),
+('Imágenes Expo Marítima', 2);
 
 INSERT INTO Imagenes_Galerias (titulo, imagen, id_Galeria) VALUES 
-('Orquesta', 'musica1.jpg', 1), ('Escenario', 'musica2.jpg', 1), ('Aplausos', 'musica3.jpg', 1),
-('Cartel Cine', 'cine1.jpg', 2), ('Butacas', 'cine2.jpg', 2), ('Palomitas', 'cine3.jpg', 2),
-('Cuadro Picasso', 'arte1.jpg', 3), ('Escultura', 'arte2.jpg', 3), ('Entrada Museo', 'arte3.jpg', 3);
+('Violines OSPA', 'ospa1.jpg', 1), 
+('Director de Orquesta', 'ospa2.jpg', 1), 
+('Público Auditorio', 'ospa3.jpg', 1),
+('Entrada Niemeyer', 'cine_aviles1.jpg', 2), 
+('Sala Proyección', 'cine_aviles2.jpg', 2),
+ ('Cartel Ciclo', 'cine_aviles3.jpg', 2),
+('Fósil Ammonite', 'muja1.jpg', 3), 
+('Réplica Dinosaurio', 'muja2.jpg', 3),
+ ('Costa de Colunga', 'muja3.jpg', 3);
+ 
 
 
 INSERT INTO Favoritos (correo_usuario, id_Evento) VALUES 
@@ -77,7 +85,6 @@ INSERT INTO Favoritos (correo_usuario, id_Evento) VALUES
 
 /*VISTAS*/
 
--- Galerías de eventos pasados
 CREATE VIEW Vista_Galerias_Pasadas AS
 SELECT Galerias.* FROM Galerias
 JOIN Eventos ON Galerias.id_Evento = Eventos.id
