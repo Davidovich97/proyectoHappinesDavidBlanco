@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPINESS & Co - Inicio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;700&display=swap');
+        
+        :root {
+            --h-pink: #ba007c;
+            --h-blue: #009bdb;
+            --h-orange: #ff7b00;
+            --h-grey: #555555;
+        }
+
+        body { font-family: 'Inter', sans-serif; color: var(--h-grey); }
+        .font-logo { font-family: 'Playfair Display', serif; } 
+        .font-ampersand { font-family: 'Cursive', serif; color: var(--h-pink); } 
+    </style>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'h-pink': '#ba007c',
+                'h-blue': '#009bdb',
+                'h-orange': '#ff7b00',
+                'h-grey': '#555555',
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-white">
+
+    <!-- Navegación -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
+            <div class="text-3xl font-logo italic font-bold tracking-tighter">
+                HAPPINESS<span class="font-ampersand text-4xl not-italic">&</span>Co
+            </div>
+
+            <nav class="hidden md:block">
+                <ul class="flex gap-10 text-[11px] font-bold uppercase tracking-[0.2em]">
+                    <li><a href="#" class="text-h-pink border-b-2 border-h-pink pb-1">Inicio</a></li>
+                    <li><a href="#" class="hover:text-h-pink transition">Eventos</a></li>
+                    <li><a href="#" class="hover:text-h-pink transition">Fuentes</a></li>
+                    <li><a href="#" class="hover:text-h-pink transition">Historial</a></li>
+                    <li><a href="#" class="hover:text-h-pink transition">Nosotros</a></li>
+                    <li><a href="#" class="hover:text-h-pink transition">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="hidden lg:block text-sm font-bold border-2 border-h-grey px-6 py-2 hover:bg-h-grey hover:text-white transition cursor-pointer">
+                SUSCRÍBETE
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Hero (Imagen actualizada: manos con móviles en fiesta) -->
+    <section class="relative h-[85vh] flex items-center justify-center overflow-hidden bg-black">
+        <!-- Imagen de fondo optimizada -->
+        <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=2070&auto=format&fit=crop" 
+             class="absolute inset-0 w-full h-full object-cover opacity-60" 
+             alt="Manos con móviles en un concierto"
+             onerror="this.src='https://images.unsplash.com/photo-1514525253344-f814d0c9e48d?auto=format&fit=crop&q=80&w=2000'">
+        
+        <div class="relative z-10 text-center text-white px-4">
+            <span class="inline-block text-xs font-bold tracking-[0.3em] uppercase mb-4 bg-h-pink px-4 py-1">Destacado</span>
+            <h1 class="text-5xl md:text-8xl font-logo italic mb-6">Música bajo las estrellas</h1>
+            <p class="text-lg md:text-xl font-light max-w-2xl mx-auto mb-8">Descubre la programación cultural más vibrante de la ciudad.</p>
+            <a href="#eventos" class="bg-white text-h-grey px-10 py-4 font-bold uppercase text-xs tracking-widest hover:bg-h-pink hover:text-white transition">Explorar Eventos</a>
+        </div>
+    </section>
+
+    <!-- Sección Tarjetas Destacadas -->
+    <section class="max-w-7xl mx-auto px-6 -mt-24 relative z-20">
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Tarjeta 1 -->
+            <div class="group cursor-pointer">
+                <div class="rounded-[40px] overflow-hidden shadow-2xl mb-6 aspect-[4/5] bg-gray-200">
+                    <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=800" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Metrópoli">
+                </div>
+                <div class="px-4 border-l-2 border-h-pink">
+                    <p class="text-[10px] font-bold text-h-pink uppercase tracking-widest">05-06-2026 • Gijón</p>
+                    <h3 class="text-xl font-logo italic font-bold mt-1">Metrópoli Preview</h3>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="group cursor-pointer">
+                <div class="rounded-[40px] overflow-hidden shadow-2xl mb-6 aspect-[4/5] bg-gray-200">
+                    <img src="https://images.unsplash.com/photo-1554907984-15263bfd63bd?q=80&w=800" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Exposición">
+                </div>
+                <div class="px-4 border-l-2 border-h-orange">
+                    <p class="text-[10px] font-bold text-h-orange uppercase tracking-widest">24-01-2026 • Colunga</p>
+                    <h3 class="text-xl font-logo italic font-bold mt-1">Expo: Tesoros de la Mar</h3>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="group cursor-pointer">
+                <div class="rounded-[40px] overflow-hidden shadow-2xl mb-6 aspect-[4/5] bg-gray-200">
+                    <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?q=80&w=800" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Teatro">
+                </div>
+                <div class="px-4 border-l-2 border-h-blue">
+                    <p class="text-[10px] font-bold text-h-blue uppercase tracking-widest">15-06-2026 • Oviedo</p>
+                    <h3 class="text-xl font-logo italic font-bold mt-1">Comedia en el Campoamor</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <main id="eventos" class="max-w-7xl mx-auto px-6 py-24">
+        <div class="flex flex-col lg:flex-row gap-20">
+            
+            <!-- Listado de Eventos -->
+            <div class="lg:w-2/3">
+                <div class="mb-16">
+                    <h2 class="text-xs font-bold tracking-[0.4em] uppercase text-gray-400 mb-2">Agenda Cultural</h2>
+                    <h3 class="text-4xl font-logo italic">Próximos Eventos</h3>
+                </div>
+
+                <div class="space-y-20">
+                    <article class="group">
+                        <div class="grid md:grid-cols-2 gap-10 items-center">
+                            <div class="overflow-hidden relative rounded-lg bg-gray-100">
+                                <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=800" 
+                                     class="w-full aspect-video object-cover group-hover:scale-105 transition duration-700" alt="Danza">
+                                <div class="absolute top-6 left-6 bg-h-grey text-white text-[10px] font-bold px-4 py-2 uppercase tracking-widest">Danza</div>
+                            </div>
+                            <div>
+                                <span class="text-h-grey font-bold text-sm tracking-widest">25-06-2026</span>
+                                <h4 class="text-3xl font-logo italic mt-2 mb-4">Noche de Danza en el Puerto</h4>
+                                <p class="text-gray-500 font-light leading-relaxed mb-6">Espectáculo de danza contemporánea frente al mar Cantábrico en Gijón.</p>
+                                <a href="#" class="inline-block border-b border-h-grey pb-1 text-xs font-bold uppercase tracking-widest hover:text-h-pink transition">Ver detalles</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="lg:w-1/3 space-y-16">
+                <div>
+                    <h3 class="text-xl font-logo italic mb-8 border-b border-gray-100 pb-4">Recomendados</h3>
+                    <div class="space-y-8">
+                        <div class="flex gap-4 group cursor-pointer">
+                            <div class="w-20 h-20 bg-gray-200 overflow-hidden shrink-0 rounded-md">
+                                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=200" 
+                                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500" alt="Música">
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-bold text-h-pink uppercase tracking-tighter">01-01-2026 • Música</p>
+                                <h5 class="text-sm font-bold leading-snug group-hover:text-h-pink transition uppercase">Concierto Año Nuevo OSPA</h5>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 group cursor-pointer">
+                            <div class="w-20 h-20 bg-gray-200 overflow-hidden shrink-0 rounded-md">
+                                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=200" 
+                                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-500" alt="Cine">
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-bold text-h-blue uppercase tracking-tighter">12-01-2026 • Cine</p>
+                                <h5 class="text-sm font-bold leading-snug group-hover:text-h-blue transition uppercase">Ciclo de Cine Clásico</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-8 border border-gray-100 rounded-xl">
+                    <h3 class="text-lg font-logo italic mb-4">Mantente informado</h3>
+                    <p class="text-xs text-gray-500 mb-6">Recibe nuestra agenda semanal directamente en tu email.</p>
+                    <input type="email" placeholder="Tu correo electrónico" class="w-full p-3 text-xs border border-gray-200 mb-4 focus:outline-none focus:border-h-pink rounded-md">
+                    <button class="w-full bg-h-grey text-white text-[10px] font-bold py-3 uppercase tracking-widest hover:bg-h-pink transition rounded-md">Suscribirme</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-100 py-16 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-2xl font-logo italic">
+                HAPPINESS<span class="font-ampersand text-3xl not-italic">&</span>Co
+            </div>
+            <div class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">
+                © 2026 — Agenda Cultural Local
+            </div>
+            <div class="flex gap-8">
+                <a href="#" class="text-h-grey hover:text-h-pink transition uppercase text-[10px] font-bold">Instagram</a>
+                <a href="#" class="text-h-grey hover:text-h-pink transition uppercase text-[10px] font-bold">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
