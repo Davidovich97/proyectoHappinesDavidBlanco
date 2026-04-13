@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPINESS & Co - Contacto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'h-pink': '#ba007c',
+                'h-blue': '#009bdb',
+                'h-orange': '#ff7b00',
+                'h-grey': '#555555',
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body style="background-image: url('assets/img/fondo.jpg'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat; background-color: #d2ebff;">
+
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
+            <div class="text-3xl font-logo robot tracking-tighter">
+                HAPPINESS<span class="font-ampersand text-4xl not-italic">&</span>Co
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex gap-10 text-[11px] font-bold uppercase tracking-[0.2em]">
+                    <li><a href="index.html" class="hover:text-h-pink transition">Inicio</a></li>
+                    <li><a href="eventos.html" class="hover:text-h-pink transition">Eventos</a></li>
+                    <li><a href="fuentes.html" class="hover:text-h-pink transition">Fuentes</a></li>
+                    <li><a href="historial.html" class="hover:text-h-pink transition">Historial</a></li>
+                    <li><a href="nosotros.html" class="hover:text-h-pink transition">Nosotros</a></li>
+                    <li><a href="contacto.html" class="text-h-pink border-b-2 border-h-pink pb-1">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="hidden lg:block text-sm font-bold border-2 border-h-grey px-6 py-2 hover:bg-h-grey hover:text-white transition cursor-pointer uppercase tracking-widest">Suscríbete</div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-16">
+        <section class="bg-white/90 backdrop-blur-md p-10 md:p-16 rounded-[40px] shadow-2xl border border-white/50">
+            <div class="text-center mb-12">
+                <h2 class="text-xs font-bold tracking-[0.4em] uppercase text-h-pink mb-4">¿Hablamos?</h2>
+                <h1 class="text-5xl font-logo robot mb-6">Ponte en contacto</h1>
+                <p class="text-gray-500 max-w-xl mx-auto">Si tienes alguna duda sobre nuestra agenda o quieres colaborar con nosotros, rellena el siguiente formulario.</p>
+            </div>
+
+            <form action="#" method="POST" class="space-y-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-2">
+                        <label for="nombre" class="text-[10px] font-bold uppercase tracking-widest text-h-grey ml-1">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required 
+                            class="w-full bg-white/50 border-b-2 border-gray-200 p-4 focus:outline-none focus:border-h-pink transition text-sm">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="apellidos" class="text-[10px] font-bold uppercase tracking-widest text-h-grey ml-1">Apellidos</label>
+                        <input type="text" id="apellidos" name="apellidos" required 
+                            class="w-full bg-white/50 border-b-2 border-gray-200 p-4 focus:outline-none focus:border-h-pink transition text-sm">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-2">
+                        <label for="email" class="text-[10px] font-bold uppercase tracking-widest text-h-grey ml-1">Email</label>
+                        <input type="email" id="email" name="email" required 
+                            class="w-full bg-white/50 border-b-2 border-gray-200 p-4 focus:outline-none focus:border-h-pink transition text-sm">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="telefono" class="text-[10px] font-bold uppercase tracking-widest text-h-grey ml-1">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" 
+                            class="w-full bg-white/50 border-b-2 border-gray-200 p-4 focus:outline-none focus:border-h-pink transition text-sm">
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label for="comentario" class="text-[10px] font-bold uppercase tracking-widest text-h-grey ml-1">Comentario</label>
+                    <textarea id="comentario" name="comentario" rows="4" required 
+                        class="w-full bg-white/50 border-b-2 border-gray-200 p-4 focus:outline-none focus:border-h-pink transition text-sm resize-none"></textarea>
+                </div>
+
+                <div class="flex items-start gap-4 p-4 bg-gray-50/50 rounded-2xl">
+                    <input type="checkbox" id="autorizacion" name="autorizacion" 
+                        class="mt-1 w-4 h-4 accent-h-pink cursor-pointer">
+                    <label for="autorizacion" class="text-xs text-gray-500 leading-relaxed cursor-pointer">
+                        Autorizo mi inscripción en la base de datos de suscriptores para recibir la agenda cultural semanal de HAPPINESS&Co.
+                    </label>
+                </div>
+
+                <div class="text-center pt-4">
+                    <button type="submit" 
+                        class="bg-h-grey text-white font-bold py-5 px-12 rounded-full hover:bg-h-pink transition-all shadow-lg uppercase text-xs tracking-[0.2em]">
+                        Enviar Formulario
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-lg">
+            <div class="text-2xl font-logo robot">
+                HAPPINESS<span class="font-ampersand text-3xl not-italic">&</span>Co
+            </div>
+            <div class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">
+                © 2026 — Agenda Cultural Local
+            </div>
+            <div class="flex gap-8">
+                <a href="#" class="text-h-grey hover:text-h-pink transition uppercase text-[10px] font-bold">Instagram</a>
+                <a href="#" class="text-h-grey hover:text-h-pink transition uppercase text-[10px] font-bold">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
