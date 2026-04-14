@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAPPINESS & Co - Inicio</title>
+    <title>HAPPINESS & Co - Historial</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles/styles.css">
     <script>
         tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'h-pink': '#ba007c',
-                        'h-blue': '#009bdb',
-                        'h-orange': '#ff7b00',
-                        'h-grey': '#555555',
-                    }
-                }
+          theme: {
+            extend: {
+              colors: {
+                'h-pink': '#ba007c',
+                'h-blue': '#009bdb',
+                'h-orange': '#ff7b00',
+                'h-grey': '#555555',
+              }
             }
+          }
         }
     </script>
 </head>
-
-<body style="background-image: url('assets/img/fondo.jpg'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat; background-color: #d2ebff;"></body>
+<body style="background-image: url('assets/img/fondo.jpg'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat; background-color: #d2ebff;">
+    
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
-            <div class="text-3xl font-logo robot tracking-tighter">
-                HAPPINESS<span class="font-ampersand text-4xl not-italic">&</span>Co
-            </div>
+            
+            <a href="index.html" class="block">
+                <img src="assets/img/happines-and-co-propuesta-02.png" alt="HAPPINESS & Co" class="h-12 w-auto object-contain">
+            </a>
 
             <nav class="hidden md:block">
                 <ul class="flex gap-10 text-[11px] font-bold uppercase tracking-[0.2em]">
@@ -41,9 +41,7 @@
                 </ul>
             </nav>
 
-            <div class="hidden lg:block text-sm font-bold border-2 border-h-grey px-6 py-2 hover:bg-h-grey hover:text-white transition cursor-pointer">
-                SUSCRÍBETE
-            </div>
+          
         </div>
     </header>
 
@@ -194,21 +192,26 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-transparent border-t border-gray-200 py-16 px-6 relative z-10">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-2xl font-logo robot">
-                HAPPINESS<span class="font-ampersand text-3xl not-italic">&</span>Co
-            </div>
-            <div class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">
-                © 2026 — Agenda Cultural Local
-            </div>
-            <div class="flex gap-8">
-                <a href="#"
-                    class="text-h-grey hover:text-h-pink transition uppercase text-[10px] font-bold">Instagram</a>
-                <a href="#" class="text-h-grey hover:text-h-pink transition uppercase text-[10px] font-bold">Twitter</a>
-            </div>
+    <footer class="bg-white border-t border-gray-100 py-16 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        
+        <a href="index.html" class="block">
+            <img src="assets/img/happines-and-co-propuesta-02.png" 
+                 alt="HAPPINESS & Co" 
+                 class="h-12 w-auto object-contain">
+        </a>
+
+        <div class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">
+            © 2026 — Agenda Cultural Local
         </div>
-    </footer>
+
+        <div class="flex gap-8">
+            <a href="#" class="text-h-grey hover:text-h-pink transition uppercase text-[10px] font-bold">Instagram</a>
+            <a href="#" class="text-h-grey hover:text-h-pink transition uppercase text-[10px] font-bold">Twitter</a>
+        </div>
+        
+    </div>
+</footer>
 
 </body>
 
