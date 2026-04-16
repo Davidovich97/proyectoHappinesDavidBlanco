@@ -21,13 +21,16 @@ public class proyectoHappiness {
         // Variable para poner la respuesta del menu
         int opcionMenu;
         
-        //Creamos 6 eventos para que se puedan realizar todos los casos del menu
-mapaEventos.put(0, new Evento(0, LocalDate.parse("2026-01-01"), "Concierto Año Nuevo", "Teatro Real", "Música clásica")); 
-mapaEventos.put(1, new Evento(1, LocalDate.parse("2026-01-12"), "Cine de Invierno", "Cines Callao", "Ciclo de cine")); 
-mapaEventos.put(2, new Evento(2, LocalDate.parse("2026-01-24"), "Expo Arte", "Museo Prado", "Arte moderno")); 
-mapaEventos.put(3, new Evento(3, LocalDate.parse("2026-06-05"), "Festival Rock", "Estadio", "Rock al aire libre")); 
-mapaEventos.put(4, new Evento(4, LocalDate.parse("2026-06-15"), "Teatro Verano", "Plaza Mayor", "Comedia")); 
-mapaEventos.put(5, new Evento(5, LocalDate.parse("2026-06-25"), "Danza Moderna", "Auditorio", "Espectáculo danza")); 
+        // Creamos los 6 eventos obligatorios siguiendo las fechas y datos de la Base de Datos
+// Fecha de corte para separar historial de próximos: 01-05-2026 [cite: 41]
+
+mapaEventos.put(0, new Evento(0, LocalDate.parse("2026-01-01"), "Concierto de Año Nuevo OSPA", "Auditorio Príncipe Felipe, Oviedo", "Concierto de la Orquesta Sinfónica del Principado de Asturias.")); 
+mapaEventos.put(1, new Evento(1, LocalDate.parse("2026-01-12"), "Ciclo de Cine Clásico", "Centro Niemeyer, Avilés", "Proyección de grandes clásicos en versión original subtitulada.")); 
+mapaEventos.put(2, new Evento(2, LocalDate.parse("2026-01-24"), "Expo: Tesoros de la mar", "Museo del Jurásico (MUJA), Colunga", "Exposición temporal sobre fósiles marinos hallados en la costa asturiana.")); 
+mapaEventos.put(3, new Evento(3, LocalDate.parse("2026-06-05"), "Metrópoli Gijón Preview", "Recinto Ferial de Gijón", "Avance del festival de cultura pop y entretenimiento.")); 
+mapaEventos.put(4, new Evento(4, LocalDate.parse("2026-06-15"), "Teatro: Comedia en el Campoamor", "Teatro Campoamor, Oviedo", "Obra de teatro humorística con actores locales.")); 
+mapaEventos.put(5, new Evento(5, LocalDate.parse("2026-06-25"), "Noche de Danza en el Puerto", "Puerto Deportivo, Gijón", "Espectáculo de danza contemporánea frente al mar.")); 
+
 contadorIdsEventos = 6;
 
         // También metemos un usuario para poder usar directamente Eliminar Usuario sin tener que crear uno
