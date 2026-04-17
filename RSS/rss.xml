@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>HAPPINESS &amp; Co - Agenda Cultural</title>
+        <link>../Lenguaje de Marcas/eventos.html</link>
+        <description>Recopilación de eventos culturales: música, teatro y exposiciones[cite: 5, 6].</description>
+        <language>es</language>
+        <lastBuildDate>Thu, 16 Apr 2026 13:00:00 +0200</lastBuildDate>
+        
+        <item>
+            <title>Metrópoli Gijón Preview</title>
+            <link>../Lenguaje de Marcas/evento-metropoli.html</link>
+            <description>Avance del festival de cultura pop y entretenimiento en Gijón.</description>
+            <category>Música</category>
+            <pubDate>Fri, 05 Jun 2026 10:00:00 +0200</pubDate>
+        </item>
+        
+        <item>
+            <title>Comedia en el Teatro Campoamor</title>
+            <link>../Lenguaje de Marcas/evento-teatro.html</link>
+            <description>Obra de teatro humorística con actores locales en Oviedo.</description>
+            <category>Teatro</category>
+            <pubDate>Mon, 15 Jun 2026 19:00:00 +0200</pubDate>
+        </item>
+        
+        <item>
+            <title>Noche de Danza en el Puerto</title>
+            <link>../Lenguaje de Marcas/evento-danza.html</link>
+            <description>Espectáculo de danza contemporánea frente al mar Cantábrico en Gijón.</description>
+            <category>Danza</category>
+            <pubDate>Thu, 25 Jun 2026 20:00:00 +0200</pubDate>
+        </item>
+        
+    </channel>
+</rss>

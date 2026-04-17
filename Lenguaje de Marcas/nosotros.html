@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPINESS & Co - Historial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'h-pink': '#ba007c',
+                'h-blue': '#009bdb',
+                'h-orange': '#ff7b00',
+                'h-grey': '#555555',
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body style="background-image: url('assets/img/fondo.jpg'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat; background-color: #d2ebff;">
+    
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
+            
+            <a href="index.html" class="block">
+                <img src="assets/img/happines-and-co-propuesta-02.png" alt="HAPPINESS & Co" class="h-12 w-auto object-contain">
+            </a>
+
+            <nav class="hidden md:block">
+                <ul class="flex gap-10 text-[11px] font-bold uppercase tracking-[0.2em]">
+                    <li><a href="index.html" class="hover:text-h-pink transition">Inicio</a></li>
+                    <li><a href="eventos.html" class="hover:text-h-pink transition">Eventos</a></li>
+                    <li><a href="fuentes.html" class="hover:text-h-pink transition">Fuentes</a></li>
+                    <li><a href="historial.html" class="hover:text-h-pink transition">Historial</a></li>
+                    <li><a href="nosotros.html" class="text-h-pink border-b-2 border-h-pink pb-1">Nosotros</a></li>
+                    <li><a href="contacto.html" class="hover:text-h-pink transition">Contacto</a></li>
+                </ul>
+            </nav>
+
+          
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-16">
+        <section class="bg-white/90 backdrop-blur-md p-12 rounded-[40px] shadow-2xl mb-16">
+            <div class="max-w-3xl">
+                <h2 class="text-xs font-bold tracking-[0.4em] uppercase text-h-pink mb-4">Nuestra Esencia</h2>
+                <h1 class="text-5xl font-logo robot mb-8">HAPPINESS<span class="font-ampersand">&</span>Co</h1>
+                <p class="text-xl text-gray-600 leading-relaxed mb-6 italic">
+                    "Una empresa joven y dinámica dedicada, en cuerpo y alma, al mundo del ocio."
+                </p>
+                <p class="text-gray-500 leading-relaxed">
+                    Nacimos de la necesidad de poner orden en el inmenso océano de posibilidades culturales de nuestra ciudad. Somos una agenda cultural que recopila y organiza música, teatro, exposiciones y mucho más, para que tú solo tengas que preocuparte de disfrutar.
+                </p>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-logo robot text-center mb-12 text-h-grey bg-white/80 inline-block px-8 py-2 rounded-full mx-auto block w-fit">Nuestro Equipo</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white/90 backdrop-blur-sm p-8 rounded-[30px] shadow-xl text-center border border-white">
+                    <img src="assets/img/equipo-1.jpg" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-h-pink" alt="Director">
+                    <h3 class="text-xl font-bold text-h-grey">Sergio Suárez</h3>
+                    <p class="text-h-pink text-xs font-bold uppercase tracking-widest mb-4">Director Creativo</p>
+                    <div class="text-left text-sm text-gray-500 bg-gray-50 p-4 rounded-xl">
+                        <p class="font-bold text-h-grey mb-1">Currículum Vitae:</p>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Grado en Bellas Artes</li>
+                            <li>Máster en Gestión Cultural</li>
+                            <li>10 años de experiencia en eventos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white/90 backdrop-blur-sm p-8 rounded-[30px] shadow-xl text-center border border-white">
+                    <img src="assets/img/equipo-2.jpg" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-h-blue" alt="Programador">
+                    <h3 class="text-xl font-bold text-h-grey">Sergio Blanco</h3>
+                    <p class="text-h-blue text-xs font-bold uppercase tracking-widest mb-4">Jefe de Programación</p>
+                    <div class="text-left text-sm text-gray-500 bg-gray-50 p-4 rounded-xl">
+                        <p class="font-bold text-h-grey mb-1">Currículum Vitae:</p>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Grado en Periodismo</li>
+                            <li>Especialista en Crítica de Arte</li>
+                            <li>Ex-director de Programas de Radio</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white/90 backdrop-blur-sm p-8 rounded-[30px] shadow-xl text-center border border-white">
+                    <img src="assets/img/equipo-3.jpg" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-h-orange" alt="Relaciones">
+                    <h3 class="text-xl font-bold text-h-grey">Alex Remis</h3>
+                    <p class="text-h-orange text-xs font-bold uppercase tracking-widest mb-4">Relaciones Públicas</p>
+                    <div class="text-left text-sm text-gray-500 bg-gray-50 p-4 rounded-xl">
+                        <p class="font-bold text-h-grey mb-1">Currículum Vitae:</p>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Grado en Marketing</li>
+                            <li>Experto en Comunicación Digital</li>
+                            <li>Organizador de Festivales de Cine</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+<footer class="bg-white border-t border-gray-100 py-16 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        
+        <a href="index.html" class="block">
+            <img src="assets/img/happines-and-co-propuesta-02.png" 
+                 alt="HAPPINESS & Co" 
+                 class="h-12 w-auto object-contain">
+        </a>
+
+        <div class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">
+            © 2026 — Agenda Cultural Local
+        </div>
+
+        <div class="flex gap-8">
+            <a href="#" class="text-h-grey hover:text-h-pink transition uppercase text-[10px] font-bold">Instagram</a>
+            <a href="#" class="text-h-grey hover:text-h-pink transition uppercase text-[10px] font-bold">Twitter</a>
+        </div>
+        
+    </div>
+</footer>
+
+</body>
+</html>

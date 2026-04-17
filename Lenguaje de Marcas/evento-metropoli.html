@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="alternate" type="application/rss+xml" title="HAPPINESS & Co - Feed de Eventos" href="../RSS/rss.xml" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPINESS & Co - Historial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'h-pink': '#ba007c',
+                'h-blue': '#009bdb',
+                'h-orange': '#ff7b00',
+                'h-grey': '#555555',
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body style="background-image: url('assets/img/fondo.jpg'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat; background-color: #d2ebff;">
+    
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
+            
+            <a href="index.html" class="block">
+                <img src="assets/img/happines-and-co-propuesta-02.png" alt="HAPPINESS & Co" class="h-12 w-auto object-contain">
+            </a>
+
+            <nav class="hidden md:block">
+                <ul class="flex gap-10 text-[11px] font-bold uppercase tracking-[0.2em]">
+                    <li><a href="index.html" class="hover:text-h-pink transition">Inicio</a></li>
+                    <li><a href="eventos.html" class="text-h-pink border-b-2 border-h-pink pb-1">Eventos</a></li>
+                    <li><a href="fuentes.html" class="hover:text-h-pink transition">Fuentes</a></li>
+                    <li><a href="historial.html" class="hover:text-h-pink transition">Historial</a></li>
+                    <li><a href="nosotros.html" class="hover:text-h-pink transition">Nosotros</a></li>
+                    <li><a href="contacto.html" class="hover:text-h-pink transition">Contacto</a></li>
+                </ul>
+            </nav>
+
+          
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <a href="eventos.html" class="text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-h-orange transition mb-8 inline-block">← Volver a Eventos</a>
+        <div class="flex flex-col lg:flex-row gap-16 bg-white/90 backdrop-blur-md p-10 rounded-[40px] shadow-2xl">
+            <div class="lg:w-2/3">
+                <div class="rounded-[30px] overflow-hidden shadow-lg mb-10 aspect-video">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/METROPOLIGIJON_2.jpg" class="w-full h-full object-cover" alt="Metrópoli">
+                </div>
+                <div class="border-l-4 border-h-orange pl-6 mb-8">
+                    <span class="text-h-orange font-bold text-sm tracking-[0.2em] uppercase">Exposición • 05-06-2026</span>
+                    <h1 class="text-5xl font-logo robot mt-2">Metrópoli Gijón</h1>
+                    <p class="text-xl text-gray-400 mt-2 italic">Recinto Ferial de Gijón</p>
+                </div>
+                <div class="prose prose-lg text-gray-600 leading-relaxed mb-16">
+                    <p>Avance del festival de cultura pop y entretenimiento. Una oportunidad única para conocer las novedades de la próxima edición.</p>
+                </div>
+            </div>
+            <aside class="lg:w-1/3">
+                <div class="bg-gray-50/50 p-8 rounded-3xl sticky top-32 border border-white">
+                    <h4 class="text-sm font-bold uppercase tracking-widest mb-6 border-b border-gray-200 pb-4">Info</h4>
+                    <p class="text-green-600 text-xs font-bold mb-6 uppercase">Entradas Disponibles</p>
+                    <button class="w-full bg-h-orange text-white font-bold py-4 rounded-xl hover:opacity-90 transition uppercase text-xs tracking-widest">Reservar</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+</body>
+</html>
