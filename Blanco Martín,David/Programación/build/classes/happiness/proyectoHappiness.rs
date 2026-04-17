@@ -1,2 +1,0 @@
-Happiness.proyectoHappiness
-proyectoHappiness

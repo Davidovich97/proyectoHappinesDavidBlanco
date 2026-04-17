@@ -1,2 +1,0 @@
-Favorito
-Happiness.Favorito
