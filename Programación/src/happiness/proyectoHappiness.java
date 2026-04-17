@@ -73,7 +73,8 @@ contadorIdsEventos = 6;
                 if (mapaUsuarios.containsKey(emailNuevo)) {
                         System.out.println("El usuario ya existe");
 
-                //Si no existe lo guardamos con .put en el HashMap de usuarios guardando el email nuevo como clave y el usuario nuevo como el valor
+                //Si no existe lo guardamos con .put en el HashMap de usuarios guardando
+                //el email nuevo como clave y el usuario nuevo como el valor
                     } else {
                         mapaUsuarios.put(emailNuevo, new Usuario(nombreNuevo, emailNuevo, passNuevo));
                         System.out.println("Usuario creado correctamente");
