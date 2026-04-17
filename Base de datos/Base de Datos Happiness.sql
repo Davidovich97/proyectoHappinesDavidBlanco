@@ -36,9 +36,9 @@ CREATE TABLE Imagenes_Galerias (
 );
 
 CREATE TABLE Favoritos (
-    correo_usuario VARCHAR(60) NOT NULL,
+    id_usuario VARCHAR(60) NOT NULL,
     id_Evento INT NOT NULL,
-    PRIMARY KEY (correo_usuario, id_Evento),
+    PRIMARY KEY (id_usuario, id_Evento),
     CONSTRAINT fk_email_usuario_favorito FOREIGN KEY (correo_usuario) REFERENCES Usuarios(email) ON DELETE CASCADE,
     CONSTRAINT fk_evento_favorito FOREIGN KEY (id_Evento) REFERENCES Eventos(id) ON DELETE CASCADE
 );
